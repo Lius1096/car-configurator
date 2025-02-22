@@ -1,11 +1,19 @@
-import React from "react";
+import { AuthProvider } from "./context/AuthContext";
+//import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import AppRoutes from "./routes/AppRoutes";
+import './Styles/globals.css';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-500 text-white text-3xl">
-      🚀 Tailwind fonctionne avec TypeScript !
+    <div className="min-h-screen bg-gray-100">
+      <AuthProvider>
+        <Navbar />
+        <AppRoutes /> {/* Affichage des routes */}
+        
+      </AuthProvider>
     </div>
   );
-};
+}
 
 export default App;
