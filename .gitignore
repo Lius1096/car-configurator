@@ -1,24 +1,47 @@
+# -------------------------
+# Node modules
+# -------------------------
+node_modules/
+**/node_modules/
+
+# -------------------------
+# Build / dist
+# -------------------------
+frontend/dist/
+backend/dist/
+frontend/build/
+backend/build/
+
+# -------------------------
+# Environment files
+# -------------------------
+*.env
+.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+
+# -------------------------
 # Logs
-logs
-*.log
+# -------------------------
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# -------------------------
+# Mac / Windows
+# -------------------------
+Thumbs.db
+Desktop.ini

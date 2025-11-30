@@ -1,0 +1,18 @@
+[
+  { "category": "paint", "name": "Noir Uni", "idKey": "color_black", "price": 0, "hex": "#1a1a1a" },
+  { "category": "paint", "name": "Rouge Sport", "idKey": "color_red", "price": 550, "hex": "#c0392b" },
+  { "category": "paint", "name": "Bleu Métallisé", "idKey": "color_blue", "price": 600, "hex": "#2980b9" },
+  { "category": "paint", "name": "Blanc Nacré", "idKey": "color_white", "price": 750, "hex": "#f7f7f7" },
+
+  { "category": "wheels", "name": "Jantes Carrera S", "idKey": "carrera_s_wheels", "price": 0 },
+  { "category": "wheels", "name": "Jantes Carrera Exclusive", "idKey": "carrera_exclusive_design_wheels", "price": 1200 },
+  { "category": "wheels", "name": "Jantes RS Spyder", "idKey": "rs_spyder_design_wheels", "price": 2500 },
+
+  { "category": "interior", "name": "Intérieur Tissu Noir", "idKey": "cloth", "price": 0 },
+  { "category": "interior", "name": "Intérieur Cuir Blanc", "idKey": "leather_white", "price": 1500 },
+  { "category": "interior", "name": "Intérieur Alcantara", "idKey": "alcantara", "price": 1800 },
+
+  { "category": "extras", "name": "Toit Ouvrant Panoramique", "idKey": "sunroof", "price": 950 },
+  { "category": "extras", "name": "Pack Sport Extérieur", "idKey": "sportPackage", "price": 1800 },
+  { "category": "extras", "name": "Système Audio Premium", "idKey": "soundSystem", "price": 1100 }
+]
