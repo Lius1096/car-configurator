@@ -6,20 +6,7 @@ Une application web de configuration de voiture en 3D avec **React + Three.js** 
 
 ## 📁 Structure du projet
 
-carconfig/
-├─ frontend/ # Frontend React + Vite + Tailwind CLI
-│ ├─ src/
-│ │ ├─ components/ # Composants React (CarViewer.jsx, App.jsx, etc.)
-│ │ └─ styles/ # Input et Output CSS Tailwind
-│ ├─ public/models/ # Modèles 3D (.glb)
-│ └─ package.json
-│
-├─ backend/ # Backend NestJS + MongoDB
-│ ├─ src/
-│ │ └─ modules/cars/ # Module Car avec service, controller et seed.json
-│ └─ package.json
-│
-└─ carconfig.zip # Projet compressé
+
 ##
 
 ---
