@@ -185,10 +185,15 @@ export default function CarViewer({ color = "#ff0000", selectedWheel = null, opt
     if (!carRef.current) return;
     const map = wheelsMapRef.current;
 
-    Object.values(map).forEach((group) => group.forEach((m) => (m.visible = false)));
-
-    if (wheelId === "front") map.front.forEach((m) => (m.visible = true));
-    if (wheelId === "rear") map.rear.forEach((m) => (m.visible = true));
+    // If wheelId exists, show both front and rear wheels
+    // (wheelId is the design name like "carrera_s_wheels", not position)
+    if (wheelId) {
+      map.front.forEach((m) => (m.visible = true));
+      map.rear.forEach((m) => (m.visible = true));
+    } else {
+      // Hide all wheels if no selection
+      Object.values(map).forEach((group) => group.forEach((m) => (m.visible = false)));
+    }
   };
 
   const applyOptions = (opts = {}) => {
