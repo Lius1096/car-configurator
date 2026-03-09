@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import CarViewer from "./components/CarViewer";
 import ColorPicker from "./components/ColorPicker";
 import WheelSelector from "./components/WheelSelector";
-import OptionsPanel from "./components/OptionsPanel";
 import { useOptionsData } from "./hooks/useOptionsData";
 
 export default function App() {
@@ -20,22 +19,11 @@ export default function App() {
     if (config.paint) sum += config.paint.price || 0;
     if (config.wheels) sum += config.wheels.price || 0;
     if (config.interior) sum += config.interior.price || 0;
-    Object.values(config.extras).forEach(opt => sum += opt.price || 0);
     return sum;
   }, [config]);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center">Chargement...</div>;
   if (error) return <div className="min-h-screen flex items-center justify-center text-red-600">{error}</div>;
-
-  const handleToggleOption = (key) => {
-    setConfig(c => ({
-      ...c,
-      extras: {
-        ...c.extras,
-        [key]: !c.extras[key]
-      }
-    }));
-  };
 
   const handleSetInterior = (id) => {
     const interior = defs.interior.find(i => (i.idKey || i.id) === id);
@@ -98,11 +86,6 @@ export default function App() {
             </div>
           </div>
 
-          <OptionsPanel
-            options={config.extras}
-            onToggle={handleToggleOption}
-            defs={defs}
-          />
         </div>
 
         <div className="p-4 border-t border-gray-200 text-neutral-800 font-bold text-lg">
@@ -120,7 +103,6 @@ export default function App() {
             <CarViewer
               color={config.paint?.hex || "#000000"}
               selectedWheel={config.wheels?.idKey || config.wheels?.id || null}
-              options={Object.fromEntries(Object.entries(config.extras).filter(([,v]) => v))}
             />
           </div>
         </section>

@@ -27,20 +27,5 @@
   { "category": "interior", "name": "Intérieur Alcantara", "idKey": "alcantara", "price": 1800 },
   { "category": "interior", "name": "Intérieur Alcantara Premium Noir", "idKey": "alcantara_black_premium", "price": 2200 },
   { "category": "interior", "name": "Intérieur Velours Graphite", "idKey": "velvet_graphite", "price": 1700 },
-  { "category": "interior", "name": "Intérieur Cuir Nappa Crème", "idKey": "nappa_cream", "price": 1900 },
-
-  { "category": "extras", "name": "Toit Ouvrant Panoramique", "idKey": "sunroof", "price": 950 },
-  { "category": "extras", "name": "Toit Vitré Teinté", "idKey": "sunroof_tinted", "price": 1100 },
-  { "category": "extras", "name": "Pack Sport Extérieur", "idKey": "sportPackage", "price": 1800 },
-  { "category": "extras", "name": "Système Audio Premium", "idKey": "soundSystem", "price": 1100 },
-  { "category": "extras", "name": "Système Audio Bose", "idKey": "soundSystem_bose", "price": 2800 },
-  { "category": "extras", "name": "Système Audio Burmester", "idKey": "soundSystem_burmester", "price": 3500 },
-  { "category": "extras", "name": "Navigation Avancée", "idKey": "navigation", "price": 1500 },
-  { "category": "extras", "name": "Pare-Brise Teinté", "idKey": "windshield_tinted", "price": 800 },
-  { "category": "extras", "name": "Sièges Chauffants", "idKey": "heated_seats", "price": 1200 },
-  { "category": "extras", "name": "Sièges Massage", "idKey": "massage_seats", "price": 2000 },
-  { "category": "extras", "name": "Volant Chauffant", "idKey": "heated_steering", "price": 600 },
-  { "category": "extras", "name": "Caméra 360°", "idKey": "camera_360", "price": 1600 },
-  { "category": "extras", "name": "Freins Carbone Céramique", "idKey": "carbon_brakes", "price": 5000 },
-  { "category": "extras", "name": "Échappement Sport", "idKey": "sport_exhaust", "price": 2200 }
+  { "category": "interior", "name": "Intérieur Cuir Nappa Crème", "idKey": "nappa_cream", "price": 1900 }
 ]
