@@ -16,6 +16,6 @@ export class CarsController {
 
   @Post('seed')
   async seedData() {
-    return this.service.createMany(seed);
+    return this.service.clearAndSeed(seed);
   }
 }

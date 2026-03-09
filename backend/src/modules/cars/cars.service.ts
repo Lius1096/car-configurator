@@ -17,4 +17,9 @@ export class CarsService {
   async findByCategory(category: string) {
     return this.model.find({ category }).lean();
   }
+
+  async clearAndSeed(items: any[]) {
+    await this.model.deleteMany({});
+    return this.model.insertMany(items);
+  }
 }
