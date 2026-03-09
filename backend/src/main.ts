@@ -11,6 +11,7 @@ async function bootstrap() {
 
   // Serve static frontend files
   const frontendPath = join(__dirname, '../../frontend/dist');
+  console.log('🎨 Serving static assets from:', frontendPath);
   app.useStaticAssets(frontendPath);
 
   // Handle SPA routing - serve index.html for non-API routes
