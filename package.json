@@ -9,12 +9,13 @@
     "build:frontend": "cd frontend && npm install && npm run build",
     "start": "cd backend && npm start",
     "dev": "concurrently \"cd backend && npm run start:dev\" \"cd frontend && npm run dev\"",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm ci --prefix backend && npm ci --prefix frontend && npm run build"
   },
   "engines": {
-    "node": "18.x"
+    "node": "18.x",
+    "npm": "9.x"
   },
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^8.0.0"
   }
 }
