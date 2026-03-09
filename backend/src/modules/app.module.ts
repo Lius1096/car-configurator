@@ -12,19 +12,19 @@ dotenv.config();
     MongooseModule.forRootAsync({
       useFactory: async () => {
         const configured = process.env.MONGODB_URI;
+        const isProduction = process.env.NODE_ENV === 'production';
+
         if (configured) {
-          try {
-            // quick connection attempt to validate the configured mongo server
-            await mongoose.connect(configured, { serverSelectionTimeoutMS: 3000 });
-            await mongoose.disconnect();
-            console.log('[Mongoose] Connected to configured MongoDB:', configured);
-            return { uri: configured };
-          } catch (err) {
-            console.warn('[Mongoose] Unable to connect to configured MongoDB. Falling back to in-memory DB.', err?.message || err);
-          }
+          console.log('[Mongoose] Using MongoDB URI from environment');
+          return { uri: configured };
+        }
+
+        if (isProduction) {
+          throw new Error('MONGODB_URI environment variable is required in production');
         }
 
         // Start an in-memory MongoDB for development if the configured DB is not available
+        console.log('[Mongoose] Starting in-memory MongoDB for development...');
         const { MongoMemoryServer } = await import('mongodb-memory-server');
         const mongoServer = await MongoMemoryServer.create();
         const memUri = mongoServer.getUri();
