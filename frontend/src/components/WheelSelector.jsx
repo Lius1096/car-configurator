@@ -9,14 +9,16 @@ export default function WheelSelector({ wheels, selected, onSelect }) {
           <button
             key={id}
             onClick={() => onSelect(id)}
-            className={`w-full flex items-center gap-3 p-2 rounded-xl transition border ${selected === id ? "border-green-400 bg-white/5" : "border-white/10"}`}
+            className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all border-2 hover:border-blue-300 ${selected === id ? "border-blue-500 bg-blue-50 text-neutral-900" : "border-gray-300 bg-white text-neutral-900 hover:bg-gray-50"}`}
           >
-            {w.thumb ? <img src={w.thumb} alt={w.name} className="w-16 h-16 object-contain" /> : null}
-            <div className="text-left">
-              <div className="font-semibold text-white">{w.name}</div>
-              <div className="text-sm text-gray-300">{Number(w.price || 0).toLocaleString('fr-FR')} €</div>
+            {w.thumb ? <img src={w.thumb} alt={w.name} className="w-14 h-14 object-contain" /> : null}
+            <div className="text-left flex-1">
+              <div className="font-bold text-base">{w.name}</div>
+              <div className="text-sm font-medium text-gray-600">{Number(w.price || 0).toLocaleString('fr-FR')} €</div>
             </div>
-            <div className="ml-auto text-sm text-gray-300">{selected === id ? "Sélectionné" : "Choisir"}</div>
+            <div className={`text-sm font-semibold px-2 py-1 rounded ${selected === id ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`}>
+              {selected === id ? "✓ Sélectionné" : "Choisir"}
+            </div>
           </button>
         );
       })}

@@ -1,9 +1,8 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import CarViewer from "./components/CarViewer";
 import ColorPicker from "./components/ColorPicker";
 import WheelSelector from "./components/WheelSelector";
 import OptionsPanel from "./components/OptionsPanel";
-import Summary from "./components/Summary";
 import { useOptionsData } from "./hooks/useOptionsData";
 
 export default function App() {
@@ -84,14 +83,15 @@ export default function App() {
             <div className="space-y-2">
               {defs.interior.map(i => {
                 const id = i.idKey || i.id;
+                const isSelected = config.interior?.idKey === id || config.interior?.id === id;
                 return (
                   <button
                     key={id}
                     onClick={() => handleSetInterior(id)}
-                    className={`w-full text-left p-2 rounded-lg transition border ${config.interior?.idKey === id || config.interior?.id === id ? "border-blue-400 bg-blue-50" : "border-gray-200"}`}
+                    className={`w-full text-left p-3 rounded-lg transition-all border-2 font-semibold ${isSelected ? "border-blue-500 bg-blue-50 text-neutral-900" : "border-gray-300 bg-white text-neutral-900 hover:border-gray-400"}`}
                   >
-                    <div className="font-medium text-neutral-900">{i.name}</div>
-                    <div className="text-sm text-gray-500">{(i.price || 0).toLocaleString('fr-FR')} €</div>
+                    <div className="font-bold">{i.name}</div>
+                    <div className="text-sm font-medium text-gray-600">{(i.price || 0).toLocaleString('fr-FR')} €</div>
                   </button>
                 );
               })}
@@ -120,7 +120,7 @@ export default function App() {
             <CarViewer
               color={config.paint?.hex || "#000000"}
               selectedWheel={config.wheels?.idKey || config.wheels?.id || null}
-              options={Object.fromEntries(Object.entries(config.extras).filter(([k,v]) => v))}
+              options={Object.fromEntries(Object.entries(config.extras).filter(([,v]) => v))}
             />
           </div>
         </section>
