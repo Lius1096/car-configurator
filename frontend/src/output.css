@@ -1191,3 +1191,64 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
+
+/* Responsive media query for md breakpoint (min-width: 768px) */
+@media (min-width: 768px) {
+  .md\:ml-\[300px\] {
+    margin-left: 300px;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:fixed {
+    position: fixed;
+  }
+
+  .md\:top-0 {
+    top: 0;
+  }
+
+  .md\:left-0 {
+    left: 0;
+  }
+
+  .md\:h-full {
+    height: 100%;
+  }
+
+  .md\:border-b-0 {
+    border-bottom-width: 0;
+  }
+
+  .md\:border-r {
+    border-right-width: 1px;
+    border-right-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+  }
+
+  .md\:p-8 {
+    padding: 2rem;
+  }
+
+  .md\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .md\:p-14 {
+    padding: 3.5rem;
+  }
+
+  .md\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
